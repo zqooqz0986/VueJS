@@ -1,0 +1,10 @@
+D:\GitSourceCode\VueJS\bin\Debug\netcoreapp2.0\VueJS.deps.json
+D:\GitSourceCode\VueJS\bin\Debug\netcoreapp2.0\VueJS.runtimeconfig.json
+D:\GitSourceCode\VueJS\bin\Debug\netcoreapp2.0\VueJS.runtimeconfig.dev.json
+D:\GitSourceCode\VueJS\bin\Debug\netcoreapp2.0\VueJS.dll
+D:\GitSourceCode\VueJS\bin\Debug\netcoreapp2.0\VueJS.pdb
+D:\GitSourceCode\VueJS\obj\Debug\netcoreapp2.0\VueJS.csproj.CoreCompileInputs.cache
+D:\GitSourceCode\VueJS\obj\Debug\netcoreapp2.0\VueJS.AssemblyInfoInputs.cache
+D:\GitSourceCode\VueJS\obj\Debug\netcoreapp2.0\VueJS.AssemblyInfo.cs
+D:\GitSourceCode\VueJS\obj\Debug\netcoreapp2.0\VueJS.dll
+D:\GitSourceCode\VueJS\obj\Debug\netcoreapp2.0\VueJS.pdb

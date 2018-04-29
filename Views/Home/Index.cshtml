@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Let's Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p> {{ message }}</p>
+        <button type="button" v-on:click="startBuyTicket">press me</button>
+        <div v-if="showCaptcha">
+            <img v-bind:src="captchaSrc" alt="not yet!">
+        </div>
+    </div>
+</body>
+<script>
+    var app = new Vue(
+        {
+            el: '#app',
+            data: {
+                message: 'Hello Vue!',
+                showCaptcha : false
+            },
+            methods:{
+                startBuyTicket: function()
+                {
+this.message = "Start to buy ticket!";
+this.showCaptcha = true;
+this.captchaSrc = 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/256/sign-check-icon.png';
+                }
+
+            }
+        }
+    );
+    
+</script>
+
+</html>
