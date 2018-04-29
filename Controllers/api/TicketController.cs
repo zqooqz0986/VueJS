@@ -9,16 +9,16 @@ namespace VueJS.Controllers
 {
     [Route("api/[controller]")]
     public class TicketController : Controller
-    {   
+    {
         // POST api/values
         [HttpPost]
         public void Buy([FromBody]string value)
         {
-            
-            using(var client = new HttpClient())
+
+            using (var client = new HttpClient())
             {
 
-
+                client.BaseAddress = new Uri("htt0....");
             }
         }
 
