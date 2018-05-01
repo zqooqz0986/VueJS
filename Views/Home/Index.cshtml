@@ -12,10 +12,11 @@
 <body>
     <div id="app">
         <p> {{ message }}</p>
-        <button type="button" v-on:click="startBuyTicket">press me</button>
-        <div v-if="showCaptcha">
-            <img v-bind:src="captchaSrc" alt="not yet!">
-        </div>
+        <label for="JSESSIONID">JSESSIONID</label><input id="JSESSIONID" type="text" v-model="token.JSESSIONID">
+        <label for="IRS_SESSION">IRS_SESSION</label><input id="IRS_SESSION" type="text" v-model="token.IRS_SESSION">
+        <label for="THSRC_IRS">THSRC_IRS</label><input id="THSRC_IRS" type="text" v-model="token.THSRC_IRS">
+        <button type="button" v-on:click="buyTicketStep2">Step 2</button>        
+        <button type="button" v-on:click="buyTicketStep3">Step 3</button>        
     </div>
 </body>
 <script>
@@ -24,14 +25,47 @@
             el: '#app',
             data: {
                 message: 'Hello Vue!',
-                showCaptcha : false
+                token: {
+                JSESSIONID: 'AE27E70CDC947353F3114CD071E317E9',
+                IRS_SESSION: '1525186059',
+                THSRC_IRS: '!FYriw6Ybv3UKQ6crtm+Lom00d6XFOb3zmn8TFP+MqNtLyas0yb08X2P4IbNBFYoMHlc+PCxuyubHrQ=='
+                }
             },
             methods:{
-                startBuyTicket: function()
-                {
-this.message = "Start to buy ticket!";
-this.showCaptcha = true;
-this.captchaSrc = 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/256/sign-check-icon.png';
+                buyTicketStep2: function()
+                {                    
+                    debugger;
+                    var jqxhr = $.ajax(
+                        "http://localhost:5000/api/Ticket/BuyStep2", 
+                        { 
+                            method:"POST",
+                            data: this.token
+                        })
+                        .done(function(res) {
+                            debugger;
+                            alert( "success" );
+                        })
+                        .fail(function(res) {
+                            debugger;
+                            alert( "error" );
+                        });
+                },
+                buyTicketStep3: function()
+                {                    
+                    var jqxhr = $.ajax(
+                        "http://localhost:5000/api/Ticket/BuyStep3", 
+                        { 
+                            method:"POST",
+                            data: this.token
+                        })
+                        .done(function(res) {
+                            debugger;
+                            alert( "success" );
+                        })
+                        .fail(function(res) {
+                            debugger;
+                            alert( "error" );
+                        });
                 }
 
             }
